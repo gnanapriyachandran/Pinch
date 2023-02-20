@@ -17,6 +17,7 @@ extension CGFloat {
         } else {
             withAnimation(.spring()) {
                 self = val1
+                
             }
         }
     }
