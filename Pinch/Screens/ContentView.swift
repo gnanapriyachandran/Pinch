@@ -36,6 +36,7 @@ struct ContentView: View {
                 //MARK: - Page image
                 Image("magazine-front-cover")
                     .resizable()
+                //MARK: - Tap Gesture
                     .onTapGesture(count: 2, perform: {
                         //imageScale.togglebetween(1, 5)
                         
@@ -49,6 +50,8 @@ struct ContentView: View {
                         }
                         
                     })
+                
+                //MARK: -Drag Gesture
                     .gesture(
                         DragGesture(coordinateSpace: .global)
                             .onChanged({ value in
@@ -94,10 +97,6 @@ struct ContentView: View {
                     .offset(x: imageOffset.width, y: imageOffset.height)
                    
                     
-                //MARK: - Tap Gesture
-                   
-                    //MARK: - Drag Gesture
-                    
             .ignoresSafeArea()
             .navigationTitle("Pinch & Zoom")
             .navigationBarTitleDisplayMode(.inline)
@@ -109,6 +108,7 @@ struct ContentView: View {
             })
             
         }
+        //MARK: - Image Scale options
         .overlay(alignment: .top, content: {
             InfoPanelView(scale: imageScale, offset: imageOffset)
                // .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: UIScreen.main.bounds.size.height, alignment: .top)
@@ -116,6 +116,53 @@ struct ContentView: View {
                 .padding(.top,30)
                 
         })
+        
+        //MARK: - Controls
+        
+        .overlay(alignment: .bottom) {
+            Group(content: {
+                HStack {
+                   
+                    //MARK: - Scale down
+                    Button {
+                        withAnimation(.spring()) {
+                            if imageScale > 1 {
+                                imageScale -= 1
+                            } else {
+                                 resetImagestate()
+                            }
+                        }
+                    } label: {
+                        ControlImageView(imageName: "minus.magnifyingglass").font(.system(size: 36))
+                    }
+                    //MARK: - Reset
+                    
+                    Button {
+                        withAnimation(.spring()) {
+                                 resetImagestate()
+                        }
+                    }label: {
+                        ControlImageView(imageName: "arrow.up.left.and.down.right.magnifyingglass")
+                    }
+                    //MARK: - Scale up
+                    Button {
+                        if imageScale < 5 {
+                            imageScale += 1
+                        } else  {
+                            imageScale = 5
+                        }
+                    }label: {
+                        ControlImageView(imageName: "plus.magnifyingglass")
+                    }
+                }
+                .background(.ultraThinMaterial)
+                .cornerRadius(12)
+                .opacity(isAnimating ? 1:0)
+            })
+                .padding(30)
+               
+        }
+        
     }
 }
 

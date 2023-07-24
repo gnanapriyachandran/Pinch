@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39D168EF2A3A1A1E0096275B /* ControlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D168EE2A3A1A1E0096275B /* ControlImageView.swift */; };
 		5068C9AB299180F5000ABE8B /* PinchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5068C9AA299180F5000ABE8B /* PinchApp.swift */; };
 		5068C9AD299180F5000ABE8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5068C9AC299180F5000ABE8B /* ContentView.swift */; };
 		5068C9AF299180F8000ABE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5068C9AE299180F8000ABE8B /* Assets.xcassets */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39D168ED2A39DA290096275B /* Pinch.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Pinch.entitlements; sourceTree = "<group>"; };
+		39D168EE2A3A1A1E0096275B /* ControlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlImageView.swift; sourceTree = "<group>"; };
 		5068C9A7299180F5000ABE8B /* Pinch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5068C9AA299180F5000ABE8B /* PinchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchApp.swift; sourceTree = "<group>"; };
 		5068C9AC299180F5000ABE8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		5068C9A9299180F5000ABE8B /* Pinch */ = {
 			isa = PBXGroup;
 			children = (
+				39D168ED2A39DA290096275B /* Pinch.entitlements */,
 				507955FE299A887200F24AD4 /* Data */,
 				507955FD299A87F200F24AD4 /* Model */,
 				507955FC299A87BF00F24AD4 /* Views */,
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				50CC9FF0299F969C00F9ABE1 /* InfoPanelView.swift */,
+				39D168EE2A3A1A1E0096275B /* ControlImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			files = (
 				50795600299D558500F24AD4 /* Extension.swift in Sources */,
 				50CC9FF1299F969C00F9ABE1 /* InfoPanelView.swift in Sources */,
+				39D168EF2A3A1A1E0096275B /* ControlImageView.swift in Sources */,
 				5068C9AD299180F5000ABE8B /* ContentView.swift in Sources */,
 				5068C9AB299180F5000ABE8B /* PinchApp.swift in Sources */,
 			);
@@ -312,6 +318,7 @@
 				DEVELOPMENT_TEAM = 7HR4JPURJK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
