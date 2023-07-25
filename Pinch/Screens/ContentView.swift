@@ -85,7 +85,35 @@ struct ContentView: View {
                             })
                     )
                 
-                
+           
+                //MARK: -Magnification Gesture
+                    .gesture(
+                        MagnificationGesture()
+                            .onChanged({ value in
+                                withAnimation (.linear(duration: 1)){
+                                    
+                                    if imageScale >= 1 && imageScale <= 5 {
+                                        imageScale = value
+                                        print(value)
+                                    } else if imageScale > 5 {
+                                        imageScale = 5
+                            } else {
+                                        resetImagestate()
+                                    }
+                                    print(value)
+                                }
+                                   
+                                             
+                                })
+                                .onEnded({ value in
+                                    if imageScale > 5{
+                                        imageScale = 5
+                                    } else if imageScale <= 1 {
+                                        resetImagestate()
+                                    }
+                                })
+                            
+                    )
             }
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(5)
